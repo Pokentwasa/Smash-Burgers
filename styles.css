@@ -240,16 +240,18 @@ button, input { font: inherit; border: none; outline: none; }
 .product-frame {
   border: var(--border);
   border-radius: 24px;
-  padding: 32px;
+  overflow: hidden;
   background: var(--white);
   box-shadow: var(--shadow-lg);
   transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  max-width: 420px;
+  width: 100%;
 }
 .product-frame:hover {
   transform: translate(-4px, -4px) rotate(-1deg);
   box-shadow: 10px 10px 0px var(--charcoal);
 }
-.burger-svg { width: 100%; max-width: 360px; }
+.hero-burger-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
 .product-label {
   display: flex;
   justify-content: space-between;
@@ -317,15 +319,13 @@ button, input { font: inherit; border: none; outline: none; }
 }
 
 .card-visual {
-  padding: 24px;
-  display: flex;
-  justify-content: center;
+  aspect-ratio: 4/3;
+  overflow: hidden;
   border-bottom: 2px solid var(--charcoal);
   transition: background 0.3s;
 }
-.menu-card:hover .card-visual { background: var(--cream); }
-.card-icon { width: 100px; height: 100px; transition: transform 0.4s var(--ease); }
-.menu-card:hover .card-icon { transform: scale(1.1) rotate(-5deg); }
+.card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+.menu-card:hover .card-img { transform: scale(1.08); }
 
 .card-info { padding: 20px 24px; }
 .card-tag {
