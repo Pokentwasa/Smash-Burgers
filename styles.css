@@ -509,6 +509,89 @@ button, input { font: inherit; border: none; outline: none; }
 .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
 
 /* ============================================
+   DIETARY TAGS
+   ============================================ */
+.dietary-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+.dietary {
+  font-family: var(--font-display); font-weight: 700; font-size: 9px;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  padding: 4px 8px; border-radius: 4px;
+  border: 1.5px solid var(--charcoal); color: var(--charcoal);
+  background: transparent;
+}
+.dietary--hot { border-color: var(--red); color: var(--red); }
+
+/* ============================================
+   REVIEWS
+   ============================================ */
+.reviews {
+  position: relative; z-index: 1;
+  padding: 80px 48px;
+  max-width: 1400px; margin: 0 auto;
+  border-top: 2px solid var(--charcoal);
+}
+.reviews-inner { max-width: 1400px; }
+.reviews-header { display: flex; align-items: center; gap: 20px; margin-bottom: 48px; flex-wrap: wrap; }
+.reviews-title {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(32px, 5vw, 56px); text-transform: uppercase; letter-spacing: -0.02em;
+}
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.review-card {
+  border: var(--border); border-radius: var(--radius);
+  padding: 32px 28px; background: var(--white);
+  box-shadow: var(--shadow); transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.review-card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--charcoal); }
+.review-stars { color: var(--yellow); font-size: 18px; margin-bottom: 16px; letter-spacing: 2px; }
+.review-text { font-size: 14px; line-height: 1.7; color: var(--text-dim); margin-bottom: 20px; }
+.review-author { display: flex; justify-content: space-between; align-items: center; }
+.review-name { font-family: var(--font-display); font-weight: 800; font-size: 14px; }
+.review-source { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ============================================
+   INSTAGRAM GALLERY
+   ============================================ */
+.gallery {
+  position: relative; z-index: 1;
+  padding: 80px 48px;
+  max-width: 1400px; margin: 0 auto;
+  border-top: 2px solid var(--charcoal);
+}
+.gallery-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px; }
+.gallery-title {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(32px, 5vw, 56px); text-transform: uppercase; letter-spacing: -0.02em;
+}
+.gallery-handle {
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  color: var(--red); border-bottom: 2px solid var(--red); padding-bottom: 2px;
+}
+.gallery-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+.gallery-item { aspect-ratio: 1/1; overflow: hidden; border: 2px solid var(--charcoal); border-radius: 4px; cursor: pointer; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease), filter 0.3s; }
+.gallery-item:hover img { transform: scale(1.1); filter: brightness(0.85); }
+
+/* ============================================
+   ABOUT PAGE — VISUAL PROCESS STEPS
+   ============================================ */
+.process-steps-visual { display: flex; flex-direction: column; gap: 0; }
+.process-step-v {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border-top: 2px solid var(--charcoal);
+}
+.process-step-v:last-child { border-bottom: 2px solid var(--charcoal); }
+.process-step-v--reverse .step-img { order: 2; }
+.process-step-v--reverse .step-content { order: 1; }
+.step-img { overflow: hidden; }
+.step-img img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; transition: transform 0.5s var(--ease); }
+.process-step-v:hover .step-img img { transform: scale(1.05); }
+.step-content { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+.step-content .step-num { font-family: var(--font-display); font-weight: 800; font-size: 13px; color: var(--red); margin-bottom: 12px; }
+.step-content h4 { font-family: var(--font-display); font-weight: 800; font-size: 28px; text-transform: uppercase; margin-bottom: 12px; }
+.step-content p { font-size: 15px; line-height: 1.7; color: var(--text-dim); max-width: 380px; }
+
+/* ============================================
    ABOUT PAGE
    ============================================ */
 .nav-active { color: var(--red) !important; }
@@ -636,14 +719,21 @@ button, input { font: inherit; border: none; outline: none; }
   .about-hero-img { order: -1; }
   .about-hero-img .product-frame { max-width: 300px; }
   .process-steps { grid-template-columns: 1fr 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  .process-step-v { grid-template-columns: 1fr; }
+  .process-step-v--reverse .step-img { order: 0; }
+  .process-step-v--reverse .step-content { order: 0; }
 }
 @media (max-width: 700px) {
   .nav { padding: 12px 24px; }
   .nav-links { display: none; }
   .order-badge { width: 56px; height: 56px; font-size: 9px; }
-  .hero, .menu, .find-us { padding-left: 24px; padding-right: 24px; }
+  .hero, .menu, .find-us, .reviews, .gallery { padding-left: 24px; padding-right: 24px; }
   .menu-grid { grid-template-columns: 1fr; }
   .find-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .step-content { padding: 32px 24px; }
   .story-cta { padding: 64px 24px; }
   .about-hero, .about-philosophy, .about-process, .about-values, .about-cta { padding-left: 24px !important; padding-right: 24px !important; }
   .process-steps { grid-template-columns: 1fr; }
