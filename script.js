@@ -2,34 +2,6 @@
   'use strict';
 
   // ==========================================
-  // MOUSE TRACKING (for parallax floaters)
-  // ==========================================
-  let mx = 0, my = 0;
-  window.addEventListener('mousemove', (e) => {
-    mx = (e.clientX / window.innerWidth - 0.5) * 2;
-    my = (e.clientY / window.innerHeight - 0.5) * 2;
-  });
-
-  // Parallax floating assets
-  const floats = document.querySelectorAll('.float');
-  const floatOffsets = Array.from(floats).map(() => ({
-    x: (Math.random() - 0.5) * 30,
-    y: (Math.random() - 0.5) * 20,
-    speed: 0.3 + Math.random() * 0.7
-  }));
-
-  function animateFloats() {
-    floats.forEach((el, i) => {
-      const o = floatOffsets[i];
-      const px = mx * o.speed * 25 + o.x;
-      const py = my * o.speed * 15 + o.y;
-      el.style.transform = `translate(${px}px, ${py}px)`;
-    });
-    requestAnimationFrame(animateFloats);
-  }
-  if (floats.length) animateFloats();
-
-  // ==========================================
   // GSAP ANIMATIONS
   // ==========================================
   window.addEventListener('load', () => {
@@ -72,31 +44,15 @@
       scrollTrigger: { trigger: '.menu-grid', start: 'top 85%' }
     });
 
-    // Story section
-    gsap.from('.story .sticker', {
-      scale: 0, rotation: 10, opacity: 0, duration: 0.5, ease: 'back.out(1.7)',
-      scrollTrigger: { trigger: '.story', start: 'top 80%' }
+    // Story CTA band
+    gsap.from('.story-cta-title', {
+      y: 50, opacity: 0, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.story-cta', start: 'top 80%' }
     });
 
-    gsap.from('.story-title', {
-      y: 60, opacity: 0, duration: 0.8, ease: 'power3.out',
-      scrollTrigger: { trigger: '.story', start: 'top 80%' }
-    });
-
-    gsap.from('.story-title--outline', {
-      y: 60, opacity: 0, duration: 0.8, delay: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: '.story', start: 'top 80%' }
-    });
-
-    gsap.from('.story-text', {
-      y: 30, opacity: 0, duration: 0.7, delay: 0.2, ease: 'power2.out',
-      scrollTrigger: { trigger: '.story', start: 'top 75%' }
-    });
-
-    // Story stats
-    gsap.from('.stat-block', {
-      y: 40, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out',
-      scrollTrigger: { trigger: '.story-stats', start: 'top 85%' }
+    gsap.from('.story-cta .btn', {
+      y: 20, opacity: 0, duration: 0.6, delay: 0.15, ease: 'power2.out',
+      scrollTrigger: { trigger: '.story-cta', start: 'top 80%' }
     });
 
     // Find us
