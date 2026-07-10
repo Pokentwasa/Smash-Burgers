@@ -3,97 +3,294 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SMSHD — Premium Smash Burgers</title>
-<meta name="description" content="SMSHD. Smashed to perfection. Premium burgers that hit different.">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>SMSHD — The Crispiest Edges in Town</title>
+<meta name="description" content="SMSHD. Smashed fresh, never frozen. Premium smash burgers with the crispiest edges in town.">
+<meta property="og:title" content="SMSHD — Premium Smash Burgers">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<canvas class="webgl" id="webgl"></canvas>
+<!-- ===== FLOATING PARALLAX ASSETS ===== -->
+<div class="parallax-layer" aria-hidden="true">
+  <svg class="float float--pickle float--1" viewBox="0 0 60 100" fill="none"><ellipse cx="30" cy="50" rx="18" ry="45" fill="#5B8C3A" stroke="#111" stroke-width="2"/><ellipse cx="24" cy="40" rx="4" ry="8" fill="#7CB950" opacity="0.6"/><ellipse cx="36" cy="60" rx="3" ry="6" fill="#7CB950" opacity="0.5"/></svg>
+  <svg class="float float--fry float--2" viewBox="0 0 16 120" fill="none"><rect x="2" y="0" width="12" height="115" rx="6" fill="#F4C430" stroke="#111" stroke-width="2"/><rect x="5" y="10" width="3" height="20" rx="1.5" fill="#E6B325" opacity="0.5"/></svg>
+  <svg class="float float--tomato float--3" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="35" fill="#E63946" stroke="#111" stroke-width="2.5"/><path d="M28 18c4-6 14-8 22-4" stroke="#4A8C2A" stroke-width="3" fill="none" stroke-linecap="round"/><ellipse cx="30" cy="38" rx="6" ry="10" fill="#F05D67" opacity="0.35"/></svg>
+  <svg class="float float--cheese float--4" viewBox="0 0 100 60" fill="none"><path d="M5 5h90l-15 50H20z" fill="#FFB703" stroke="#111" stroke-width="2"/><circle cx="40" cy="28" r="5" fill="#FFA200" opacity="0.4"/><circle cx="65" cy="35" r="4" fill="#FFA200" opacity="0.3"/></svg>
+  <svg class="float float--drip float--5" viewBox="0 0 40 100" fill="none"><path d="M20 0c0 0-2 30-8 50s-10 35 0 45c8 8 20-2 16-20S20 0 20 0z" fill="#E63946" stroke="#111" stroke-width="2"/></svg>
+  <svg class="float float--fry float--6" viewBox="0 0 16 120" fill="none"><rect x="2" y="0" width="12" height="115" rx="6" fill="#F4C430" stroke="#111" stroke-width="2"/></svg>
+</div>
 
-<header class="nav">
-  <a href="#" class="nav-logo">SMSHD</a>
-  <nav class="nav-links"><a href="#menu">Menu</a><a href="#about">Story</a><a href="#location">Find Us</a></nav>
-  <a href="#order" class="btn btn--hot">Order Now</a>
+<!-- ===== NAVIGATION ===== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">SMSHD<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#menu">MENU</a>
+      <a href="#story">STORY</a>
+      <a href="#find-us">FIND US</a>
+    </nav>
+    <a href="#order" class="order-badge" id="orderBadge">
+      <span>ORDER</span>
+      <span>NOW</span>
+    </a>
+  </div>
 </header>
+
+<!-- ===== TICKER TOP ===== -->
+<div class="ticker ticker--top">
+  <div class="ticker-track">
+    <span>SMASHED FRESH ✦</span><span>NEVER FROZEN ✦</span><span>CRISPY EDGES ✦</span><span>DOUBLE STACKED ✦</span>
+    <span>SMASHED FRESH ✦</span><span>NEVER FROZEN ✦</span><span>CRISPY EDGES ✦</span><span>DOUBLE STACKED ✦</span>
+    <span>SMASHED FRESH ✦</span><span>NEVER FROZEN ✦</span><span>CRISPY EDGES ✦</span><span>DOUBLE STACKED ✦</span>
+  </div>
+</div>
 
 <main>
 
-  <section class="hero" data-section="hero">
-    <div class="hero-inner">
-      <h1 class="hero-title split-text">
-        <span class="line"><span class="word">SMASHED</span></span>
-        <span class="line"><span class="word">TO</span></span>
-        <span class="line"><span class="word">PERFECTION.</span></span>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-sticker sticker--red">EST. 2024</div>
+      <h1 class="hero-title" id="heroTitle">
+        <span class="hero-line">THE</span>
+        <span class="hero-line">CRISPIEST</span>
+        <span class="hero-line">EDGES IN</span>
+        <span class="hero-line hero-line--outline">TOWN.</span>
       </h1>
-      <p class="hero-tag fade-in">Premium burgers that hit different.</p>
-      <a href="#menu" class="btn btn--yellow fade-in">See The Menu ↓</a>
+      <div class="hero-bottom">
+        <p class="hero-sub">Hand-smashed on a scorching flat-top. Pressed thin. Edges go crispy. Cheese melts into the crust. That's it. That's the whole philosophy.</p>
+        <a href="#menu" class="btn btn--big">SEE THE MENU ↓</a>
+      </div>
     </div>
-  </section>
-
-  <section class="marquee-band" aria-hidden="true">
-    <div class="marquee-track"><span>SMASH ✦ STACK ✦ DRIP ✦ REPEAT ✦ </span><span>SMASH ✦ STACK ✦ DRIP ✦ REPEAT ✦ </span><span>SMASH ✦ STACK ✦ DRIP ✦ REPEAT ✦ </span><span>SMASH ✦ STACK ✦ DRIP ✦ REPEAT ✦ </span></div>
-  </section>
-
-  <section class="menu" id="menu" data-section="menu">
-    <h2 class="section-title split-text"><span class="line"><span class="word">THE MENU</span></span></h2>
-    <div class="menu-grid">
-      <article class="menu-card fade-in" data-hover-deform>
-        <div class="menu-img"></div>
-        <h3>The Classic</h3>
-        <p>Double smashed patty, American cheese, pickles, SMSHD sauce</p>
-        <span class="price">R89</span>
-      </article>
-      <article class="menu-card fade-in" data-hover-deform>
-        <div class="menu-img"></div>
-        <h3>The Drip</h3>
-        <p>Triple smash, bacon, jalapeño, cheddar melt, sriracha mayo</p>
-        <span class="price">R119</span>
-      </article>
-      <article class="menu-card fade-in" data-hover-deform>
-        <div class="menu-img"></div>
-        <h3>The O.G.</h3>
-        <p>Single smash, lettuce, tomato, onion, classic mustard</p>
-        <span class="price">R69</span>
-      </article>
-      <article class="menu-card fade-in" data-hover-deform>
-        <div class="menu-img"></div>
-        <h3>Loaded Fries</h3>
-        <p>Skin-on fries, cheese sauce, crispy onion, SMSHD dust</p>
-        <span class="price">R59</span>
-      </article>
-    </div>
-  </section>
-
-  <section class="about" id="about" data-section="about">
-    <div class="about-inner">
-      <h2 class="section-title split-text"><span class="line"><span class="word">THE STORY</span></span></h2>
-      <p class="about-text fade-in">We didn't open a burger joint. We built a culture. Every patty is hand-smashed on a scorching flat-top, pressed thin until the edges go crispy and the cheese melts into the crust. No gimmicks. No shortcuts. Just heat, pressure, and obsession.</p>
-      <div class="about-stats fade-in">
-        <div><span class="stat-big" data-count="200">0</span><span class="stat-label">°C flat-top</span></div>
-        <div><span class="stat-big" data-count="45">0</span><span class="stat-label">sec smash time</span></div>
-        <div><span class="stat-big" data-count="2">0</span><span class="stat-label">patties minimum</span></div>
+    <div class="hero-product">
+      <div class="product-frame">
+        <svg class="burger-svg" viewBox="0 0 400 360" fill="none">
+          <!-- Top Bun -->
+          <ellipse cx="200" cy="85" rx="160" ry="55" fill="#D4883A" stroke="#111" stroke-width="3"/>
+          <ellipse cx="200" cy="75" rx="155" ry="50" fill="#E8A04C"/>
+          <ellipse cx="170" cy="60" rx="12" ry="5" fill="#F0C070" opacity="0.5"/>
+          <ellipse cx="210" cy="52" rx="8" ry="4" fill="#F0C070" opacity="0.4"/>
+          <ellipse cx="240" cy="65" rx="10" ry="4" fill="#F0C070" opacity="0.35"/>
+          <!-- Lettuce -->
+          <path d="M50 120c20-15 40 5 60-5s40 10 60 0 40 8 60-2 40 12 50 2 35 5 40 0" stroke="#5B8C3A" stroke-width="14" fill="none" stroke-linecap="round"/>
+          <!-- Cheese (dripping) -->
+          <rect x="55" y="125" width="290" height="22" rx="4" fill="#FFB703" stroke="#111" stroke-width="2"/>
+          <path d="M80 147v18c0 8-12 8-12 0v-18M140 147v25c0 8-12 8-12 0v-25M220 147v15c0 8-12 8-12 0v-15M300 147v22c0 8-12 8-12 0v-22" fill="#FFB703" stroke="#111" stroke-width="1.5"/>
+          <!-- Patty 1 -->
+          <rect x="48" y="150" width="304" height="28" rx="6" fill="#4A2C17" stroke="#111" stroke-width="2.5"/>
+          <rect x="55" y="155" width="80" height="4" rx="2" fill="#6B3E22" opacity="0.4"/>
+          <!-- Patty 2 -->
+          <rect x="52" y="185" width="296" height="28" rx="6" fill="#5C3820" stroke="#111" stroke-width="2.5"/>
+          <!-- Pickles -->
+          <ellipse cx="120" cy="225" rx="22" ry="8" fill="#5B8C3A" stroke="#111" stroke-width="2"/>
+          <ellipse cx="200" cy="228" rx="20" ry="7" fill="#6BA14A" stroke="#111" stroke-width="2"/>
+          <ellipse cx="280" cy="224" rx="22" ry="8" fill="#5B8C3A" stroke="#111" stroke-width="2"/>
+          <!-- Sauce drip -->
+          <path d="M100 218c10-3 20 2 30-2s25 4 35 0 20 3 30-1 25 5 35 0 20 2 30-2" stroke="#E63946" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <!-- Bottom Bun -->
+          <ellipse cx="200" cy="260" rx="165" ry="30" fill="#D4883A" stroke="#111" stroke-width="3"/>
+          <ellipse cx="200" cy="255" rx="160" ry="26" fill="#C47A30"/>
+          <rect x="42" y="240" width="316" height="20" rx="4" fill="#D4883A" stroke="#111" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="product-label">
+        <span class="label-tag">THE CLASSIC</span>
+        <span class="label-price">R89</span>
       </div>
     </div>
   </section>
 
-  <section class="location" id="location" data-section="location">
-    <div class="location-inner">
-      <h2 class="section-title split-text"><span class="line"><span class="word">FIND US</span></span></h2>
-      <p class="fade-in">Cape Town City Bowl<br>Open daily 11:00 — 22:00</p>
-      <a href="#order" class="btn btn--yellow fade-in">Order Now</a>
+  <!-- ===== TICKER MID ===== -->
+  <div class="ticker ticker--dark">
+    <div class="ticker-track ticker-track--reverse">
+      <span>🔥 SMASH ✦</span><span>STACK ✦</span><span>DRIP ✦</span><span>REPEAT ✦</span>
+      <span>🔥 SMASH ✦</span><span>STACK ✦</span><span>DRIP ✦</span><span>REPEAT ✦</span>
+      <span>🔥 SMASH ✦</span><span>STACK ✦</span><span>DRIP ✦</span><span>REPEAT ✦</span>
+    </div>
+  </div>
+
+  <!-- ===== MENU ===== -->
+  <section class="menu" id="menu">
+    <div class="menu-header">
+      <div class="sticker sticker--yellow">FRESH DAILY</div>
+      <h2 class="menu-title">THE MENU</h2>
+    </div>
+
+    <div class="menu-grid">
+      <article class="menu-card" data-flavor="Two hand-smashed beef patties, melted American cheese, dill pickles, white onion, SMSHD sauce on a buttered potato bun.">
+        <div class="card-visual">
+          <svg viewBox="0 0 120 120" class="card-icon"><circle cx="60" cy="60" r="50" fill="#E8A04C" stroke="#111" stroke-width="3"/><rect x="20" y="55" width="80" height="12" rx="3" fill="#4A2C17" stroke="#111" stroke-width="2"/><rect x="18" y="48" width="84" height="10" rx="2" fill="#FFB703" stroke="#111" stroke-width="1.5"/></svg>
+        </div>
+        <div class="card-info">
+          <span class="card-tag">BESTSELLER</span>
+          <h3>THE CLASSIC</h3>
+          <p class="card-desc">Double smash. American cheese. Pickles. SMSHD sauce.</p>
+          <span class="card-price">R89</span>
+        </div>
+        <div class="card-expand">
+          <p class="card-flavor"></p>
+        </div>
+      </article>
+
+      <article class="menu-card" data-flavor="Triple-stacked smash patties, streaky bacon, jalapeño slices, aged cheddar, sriracha mayo, crispy onions on a brioche bun.">
+        <div class="card-visual">
+          <svg viewBox="0 0 120 120" class="card-icon"><circle cx="60" cy="60" r="50" fill="#E63946" stroke="#111" stroke-width="3"/><rect x="20" y="50" width="80" height="12" rx="3" fill="#4A2C17" stroke="#111" stroke-width="2"/><rect x="20" y="38" width="80" height="12" rx="3" fill="#4A2C17" stroke="#111" stroke-width="2"/><rect x="16" y="64" width="88" height="8" rx="2" fill="#FFB703" stroke="#111" stroke-width="1.5"/></svg>
+        </div>
+        <div class="card-info">
+          <span class="card-tag card-tag--hot">🔥 HOT</span>
+          <h3>THE DRIP</h3>
+          <p class="card-desc">Triple smash. Bacon. Jalapeño. Cheddar melt. Sriracha mayo.</p>
+          <span class="card-price">R119</span>
+        </div>
+        <div class="card-expand">
+          <p class="card-flavor"></p>
+        </div>
+      </article>
+
+      <article class="menu-card" data-flavor="Single hand-smashed patty, fresh butter lettuce, sliced tomato, white onion rings, classic yellow mustard on a sesame bun.">
+        <div class="card-visual">
+          <svg viewBox="0 0 120 120" class="card-icon"><circle cx="60" cy="60" r="50" fill="#5B8C3A" stroke="#111" stroke-width="3"/><rect x="22" y="52" width="76" height="14" rx="3" fill="#4A2C17" stroke="#111" stroke-width="2"/><ellipse cx="60" cy="47" rx="38" ry="5" fill="#5B8C3A" stroke="#111" stroke-width="1.5"/></svg>
+        </div>
+        <div class="card-info">
+          <span class="card-tag">O.G.</span>
+          <h3>THE O.G.</h3>
+          <p class="card-desc">Single smash. Lettuce. Tomato. Onion. Classic mustard.</p>
+          <span class="card-price">R69</span>
+        </div>
+        <div class="card-expand">
+          <p class="card-flavor"></p>
+        </div>
+      </article>
+
+      <article class="menu-card" data-flavor="Thick-cut skin-on fries dusted with SMSHD seasoning, drizzled with house cheese sauce, topped with crispy onion strings and a jalapeño kick.">
+        <div class="card-visual">
+          <svg viewBox="0 0 120 120" class="card-icon"><circle cx="60" cy="60" r="50" fill="#F4C430" stroke="#111" stroke-width="3"/><rect x="30" y="30" width="10" height="65" rx="5" fill="#E6B325" stroke="#111" stroke-width="1.5" transform="rotate(-8 35 60)"/><rect x="48" y="25" width="10" height="70" rx="5" fill="#E6B325" stroke="#111" stroke-width="1.5" transform="rotate(3 53 60)"/><rect x="66" y="28" width="10" height="68" rx="5" fill="#E6B325" stroke="#111" stroke-width="1.5" transform="rotate(-5 71 60)"/><rect x="82" y="32" width="10" height="62" rx="5" fill="#E6B325" stroke="#111" stroke-width="1.5" transform="rotate(6 87 60)"/></svg>
+        </div>
+        <div class="card-info">
+          <span class="card-tag">SIDE</span>
+          <h3>LOADED FRIES</h3>
+          <p class="card-desc">Skin-on fries. Cheese sauce. Crispy onion. SMSHD dust.</p>
+          <span class="card-price">R59</span>
+        </div>
+        <div class="card-expand">
+          <p class="card-flavor"></p>
+        </div>
+      </article>
+
+      <article class="menu-card" data-flavor="Creamy vanilla soft-serve dipped in house-made chocolate shell with a crumble of salted caramel cookie crumb.">
+        <div class="card-visual">
+          <svg viewBox="0 0 120 120" class="card-icon"><circle cx="60" cy="60" r="50" fill="#FFF5E6" stroke="#111" stroke-width="3"/><path d="M45 80l15-55 15 55z" fill="#F5E6D0" stroke="#111" stroke-width="2"/><circle cx="60" cy="38" r="18" fill="#FFFDF0" stroke="#111" stroke-width="2"/><circle cx="52" cy="30" r="12" fill="#FFF8E8" stroke="#111" stroke-width="1.5"/><circle cx="68" cy="32" r="10" fill="#FFF8E8" stroke="#111" stroke-width="1.5"/></svg>
+        </div>
+        <div class="card-info">
+          <span class="card-tag">SWEET</span>
+          <h3>THE DIP</h3>
+          <p class="card-desc">Vanilla soft-serve. Chocolate shell. Salted caramel crumb.</p>
+          <span class="card-price">R45</span>
+        </div>
+        <div class="card-expand">
+          <p class="card-flavor"></p>
+        </div>
+      </article>
+
+      <article class="menu-card" data-flavor="Ice-cold house lemonade blended with fresh mint leaves and a hint of ginger. Served over crushed ice in a branded SMSHD cup.">
+        <div class="card-visual">
+          <svg viewBox="0 0 120 120" class="card-icon"><circle cx="60" cy="60" r="50" fill="#A8E6CF" stroke="#111" stroke-width="3"/><rect x="35" y="35" width="50" height="55" rx="6" fill="#FFFDF0" stroke="#111" stroke-width="2"/><rect x="32" y="32" width="56" height="10" rx="3" fill="#F4C430" stroke="#111" stroke-width="2"/><circle cx="55" cy="60" r="8" fill="#F4C430" opacity="0.4" stroke="#111" stroke-width="1"/></svg>
+        </div>
+        <div class="card-info">
+          <span class="card-tag">DRINK</span>
+          <h3>SMSHD LEMONADE</h3>
+          <p class="card-desc">Fresh mint. Ginger. Crushed ice. House-made.</p>
+          <span class="card-price">R39</span>
+        </div>
+        <div class="card-expand">
+          <p class="card-flavor"></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== STORY ===== -->
+  <section class="story" id="story">
+    <div class="story-inner">
+      <div class="sticker sticker--red">THE ORIGIN</div>
+      <h2 class="story-title">WE DIDN'T OPEN<br>A BURGER JOINT.</h2>
+      <h2 class="story-title story-title--outline">WE BUILT A CULTURE.</h2>
+      <p class="story-text">Every patty is hand-smashed on a scorching flat-top at 200°C, pressed thin until the edges go crispy and the cheese melts into the crust. No gimmicks. No shortcuts. Just heat, pressure, and obsession.</p>
+      <div class="story-stats">
+        <div class="stat-block">
+          <span class="stat-num" data-count="200">0</span>
+          <span class="stat-unit">°C</span>
+          <span class="stat-label">FLAT-TOP TEMP</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-num" data-count="45">0</span>
+          <span class="stat-unit">SEC</span>
+          <span class="stat-label">SMASH TIME</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-num" data-count="2">0</span>
+          <span class="stat-unit">MIN</span>
+          <span class="stat-label">PATTIES MINIMUM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FIND US ===== -->
+  <section class="find-us" id="find-us">
+    <div class="find-inner">
+      <h2 class="find-title">FIND US</h2>
+      <div class="find-grid">
+        <div class="find-card">
+          <h3>CAPE TOWN CITY BOWL</h3>
+          <p>72 Bree Street<br>Open daily 11:00 — 22:00</p>
+        </div>
+        <div class="find-card">
+          <h3>WOODSTOCK</h3>
+          <p>The Old Biscuit Mill<br>Weekends 09:00 — 16:00</p>
+        </div>
+      </div>
     </div>
   </section>
 
 </main>
 
-<footer class="footer">
-  <p class="footer-logo">SMSHD</p>
-  <p>&copy; 2026 SMSHD. All rights reserved.</p>
+<!-- ===== TICKER BOTTOM ===== -->
+<div class="ticker ticker--top">
+  <div class="ticker-track">
+    <span>SMASHED FRESH ✦</span><span>NEVER FROZEN ✦</span><span>CRISPY EDGES ✦</span><span>DOUBLE STACKED ✦</span>
+    <span>SMASHED FRESH ✦</span><span>NEVER FROZEN ✦</span><span>CRISPY EDGES ✦</span><span>DOUBLE STACKED ✦</span>
+    <span>SMASHED FRESH ✦</span><span>NEVER FROZEN ✦</span><span>CRISPY EDGES ✦</span><span>DOUBLE STACKED ✦</span>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="order">
+  <div class="footer-inner">
+    <div class="footer-signup">
+      <h2>GET FIRST DIBS.</h2>
+      <p>Drop your email. Get secret menu drops, new location alerts, and free fries on your birthday.</p>
+      <div class="signup-form" id="signupForm">
+        <input type="email" id="signupEmail" placeholder="YOUR@EMAIL.COM" autocomplete="email">
+        <button type="button" id="signupBtn" class="btn btn--submit">SEND IT →</button>
+      </div>
+      <p class="signup-status" id="signupStatus"></p>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-logo">SMSHD<span>.</span></p>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">X</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 SMSHD. All rights reserved. Smashed with love in Cape Town.</p>
+    </div>
+  </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="script.js"></script>
