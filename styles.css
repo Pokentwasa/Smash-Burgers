@@ -103,7 +103,7 @@ button, input { font: inherit; border: none; outline: none; }
   align-items: center;
   background: rgba(255,253,240,0.92);
   backdrop-filter: blur(8px);
-  border-bottom: var(--border);
+  border-bottom: 2px solid var(--charcoal);
 }
 .nav-inner {
   width: 100%;
@@ -170,16 +170,16 @@ button, input { font: inherit; border: none; outline: none; }
    TICKER MARQUEE
    ============================================ */
 .ticker {
-  border-top: var(--border);
-  border-bottom: var(--border);
+  border-top: 2px solid var(--charcoal);
+  border-bottom: 2px solid var(--charcoal);
   padding: 14px 0;
   overflow: hidden;
   background: var(--yellow);
   position: relative;
   z-index: 10;
 }
-.ticker--dark { background: var(--charcoal); color: var(--white); }
-.ticker--top { margin-top: 73px; }
+.ticker--dark { background: var(--charcoal); color: var(--white); border-color: var(--charcoal); }
+.ticker--top { margin-top: 71px; /* nav height minus 2px border overlap */ }
 .ticker-track {
   display: flex;
   width: max-content;
@@ -225,8 +225,7 @@ button, input { font: inherit; border: none; outline: none; }
   overflow: hidden;
 }
 .hero-line--outline {
-  -webkit-text-stroke: 3px var(--charcoal);
-  color: transparent;
+  color: var(--red);
 }
 .hero-bottom { margin-top: 32px; }
 .hero-sub {
@@ -525,14 +524,13 @@ button, input { font: inherit; border: none; outline: none; }
   text-transform: uppercase; letter-spacing: -0.02em;
 }
 .about-hero .hero-line {
-  display: block; font-size: clamp(40px, 7vw, 96px); line-height: 0.94;
+  display: block; font-size: clamp(32px, 5vw, 64px); line-height: 1.05;
 }
-.about-hero-outline {
+.about-hero-sub {
   font-family: var(--font-display); font-weight: 800;
-  font-size: clamp(40px, 7vw, 96px); line-height: 0.94;
+  font-size: clamp(28px, 4vw, 52px); line-height: 1.1;
   text-transform: uppercase; letter-spacing: -0.02em;
-  -webkit-text-stroke: 3px var(--charcoal); color: transparent;
-  margin-top: 4px;
+  color: var(--red); margin-top: 8px;
 }
 
 .about-philosophy {
