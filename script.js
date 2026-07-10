@@ -66,6 +66,45 @@
       scrollTrigger: { trigger: '.find-grid', start: 'top 85%' }
     });
 
+    // Reviews
+    gsap.from('.reviews-title', {
+      y: 50, opacity: 0, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.reviews', start: 'top 85%' }
+    });
+
+    gsap.from('.reviews-header .sticker', {
+      scale: 0, rotation: -10, opacity: 0, duration: 0.5, ease: 'back.out(1.7)',
+      scrollTrigger: { trigger: '.reviews', start: 'top 85%' }
+    });
+
+    gsap.from('.review-card', {
+      y: 40, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out',
+      scrollTrigger: { trigger: '.reviews-grid', start: 'top 85%' }
+    });
+
+    // Gallery
+    gsap.from('.gallery-title', {
+      y: 50, opacity: 0, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.gallery', start: 'top 85%' }
+    });
+
+    gsap.from('.gallery-item', {
+      y: 30, opacity: 0, duration: 0.5, stagger: 0.06, ease: 'power2.out',
+      scrollTrigger: { trigger: '.gallery-grid', start: 'top 85%' }
+    });
+
+    // Visual process steps (about page)
+    gsap.utils.toArray('.process-step-v').forEach((step) => {
+      gsap.from(step.querySelector('.step-img'), {
+        opacity: 0, scale: 0.95, duration: 0.7, ease: 'power2.out',
+        scrollTrigger: { trigger: step, start: 'top 85%' }
+      });
+      gsap.from(step.querySelector('.step-content'), {
+        y: 30, opacity: 0, duration: 0.6, delay: 0.15, ease: 'power2.out',
+        scrollTrigger: { trigger: step, start: 'top 85%' }
+      });
+    });
+
     // Footer
     gsap.from('.footer-signup h2', {
       y: 40, opacity: 0, duration: 0.7, ease: 'power3.out',
