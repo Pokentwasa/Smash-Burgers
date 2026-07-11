@@ -573,23 +573,41 @@ button, input { font: inherit; border: none; outline: none; }
 .gallery-item:hover img { transform: scale(1.1); filter: brightness(0.85); }
 
 /* ============================================
-   ABOUT PAGE — VISUAL PROCESS STEPS
+   ABOUT PAGE — PROCESS
    ============================================ */
-.process-steps-visual { display: flex; flex-direction: column; gap: 0; }
-.process-step-v {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-  border-top: 2px solid var(--charcoal);
+.about-process { position: relative; z-index: 1; padding: 80px 48px; max-width: 1400px; margin: 0 auto; border-top: var(--border); }
+.about-process-inner { }
+
+.process-hero-img {
+  width: 100%; aspect-ratio: 21/9;
+  overflow: hidden; border: var(--border);
+  border-radius: var(--radius); margin-bottom: 0;
 }
-.process-step-v:last-child { border-bottom: 2px solid var(--charcoal); }
-.process-step-v--reverse .step-img { order: 2; }
-.process-step-v--reverse .step-content { order: 1; }
-.step-img { overflow: hidden; }
-.step-img img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; transition: transform 0.5s var(--ease); }
-.process-step-v:hover .step-img img { transform: scale(1.05); }
-.step-content { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
-.step-content .step-num { font-family: var(--font-display); font-weight: 800; font-size: 13px; color: var(--red); margin-bottom: 12px; }
-.step-content h4 { font-family: var(--font-display); font-weight: 800; font-size: 28px; text-transform: uppercase; margin-bottom: 12px; }
-.step-content p { font-size: 15px; line-height: 1.7; color: var(--text-dim); max-width: 380px; }
+.process-hero-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+.process-hero-img:hover img { transform: scale(1.03); }
+
+.process-blocks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-left: var(--border);
+  border-bottom: var(--border);
+}
+.process-block {
+  padding: 36px 28px;
+  border-top: var(--border);
+  border-right: var(--border);
+  transition: background 0.3s;
+}
+.process-block:hover { background: rgba(232,255,0,0.04); }
+.process-block .step-num {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 13px; color: var(--red); display: block; margin-bottom: 14px;
+}
+.process-block-content h4 {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 20px; text-transform: uppercase; margin-bottom: 10px;
+}
+.process-block-content p { font-size: 13px; line-height: 1.7; color: var(--text-dim); }
 
 /* ============================================
    ABOUT PAGE
@@ -718,7 +736,7 @@ button, input { font: inherit; border: none; outline: none; }
   .about-hero-inner { grid-template-columns: 1fr; text-align: center; }
   .about-hero-img { order: -1; }
   .about-hero-img .product-frame { max-width: 300px; }
-  .process-steps { grid-template-columns: 1fr 1fr; }
+  .process-blocks { grid-template-columns: 1fr 1fr; }
   .reviews-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: repeat(3, 1fr); }
   .process-step-v { grid-template-columns: 1fr; }
@@ -736,7 +754,7 @@ button, input { font: inherit; border: none; outline: none; }
   .step-content { padding: 32px 24px; }
   .story-cta { padding: 64px 24px; }
   .about-hero, .about-philosophy, .about-process, .about-values, .about-cta { padding-left: 24px !important; padding-right: 24px !important; }
-  .process-steps { grid-template-columns: 1fr; }
+  .process-blocks { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: 1fr; }
   .about-stats-grid { grid-template-columns: 1fr; }
   .footer-inner { padding: 48px 24px 32px; }
